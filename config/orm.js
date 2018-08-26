@@ -4,12 +4,14 @@ var connection = require('./connections.js');
 
 //creating the ORM and the methods to export
 var orm = {
-    selectAll: function(cb){
-        var queryString = 'SELECT * FROM burgers';
+    selectAll: function(tableInput, cb){
+        var queryString = 'SELECT * FROM ' + tableInput + ';';
         connection.query(queryString, function(err, result){
-            if (err) throw err;
+            if (err){
+                throw err;
+            }
             cb(result);
-        })
+        });
     },
 
     insertOne: function(insertVal, cb){
@@ -19,7 +21,7 @@ var orm = {
         connection.query(queryString, function(err, result){
             if (err) throw err;
             cb(result);
-        })
+        });
     },
 
     updateOne: function(updateVal, oldVal, cb){
@@ -29,6 +31,14 @@ var orm = {
         connection.query(queryString, function(err, result){
             if (err) throw err;
             cb(result);
+        });
+    },
+
+    testQuery: function(){
+        var queryString = 'SELECT * FROM burgers';
+        connection.query(queryString, function(err, result){
+            if (err) throw err;
+            console.log(result);
         })
     }
 };

@@ -18,7 +18,12 @@ var burger = {
         orm.updateOne(updateVal, oldVal, function(res){
             cb(res);
         })
+    },
+    testQuery: function(){
+        orm.testQuery();
     }
 };
+
+burger.testQuery();
 
 module.exports = burger;
