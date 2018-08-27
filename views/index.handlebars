@@ -1,33 +1,43 @@
-<h1>Eat-Da-Burger!</h1>
-
-<div id='notDevoured'>
-    <ol>
-        {{#each burger}}
-            {{#unless devoured}}
-                <li>
-                    <p>{{this.burger_name}}</p>
-                    <button data-id="{{this.id}}" class="eatBurger" data-devoured="{{this.devoured}}">Devour this</button>
-                </li>
-            {{/unless}}
-        {{/each}}
-    </ol>
-    <form>
-        <div class="form-group">
-            <input type="text" id="burgerInput" name="name">
+<div class="container d-flex justify-content-center">
+    <div class="flex-column">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Eat-Da-Burger!</h1>
+            </div>
         </div>
-        <button type="submit">Add a boiga that ya wanna EAT</button>
-    </form>
-</div>
-
-<div id='devoured'>
-    <h2>Devoured Boigas!</h2>
-    <ul>
-        {{#each burger}}
-            {{#if devoured}}
-            <li>
-                <p>{{this.burger_name}}</p>
-            </li>
-            {{/if}}
-        {{/each}}
-    </ul>
+        <div class="row">
+            <div id='notDevoured' class="col-md-12">
+                <ol>
+                    {{#each burger}}
+                        {{#unless devoured}}
+                            <li>
+                                <p>{{this.burger_name}}</p>
+                                <button data-id="{{this.id}}" class="eatBurger" data-devoured="{{this.devoured}}">Devour this</button>
+                            </li>
+                        {{/unless}}
+                    {{/each}}
+                </ol>
+                <form>
+                    <div class="form-group">
+                        <input type="text" id="burgerInput" name="name">
+                    </div>
+                    <button type="submit">Add a boiga thatcha wanna EAT</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div id='devoured' class="col-md-12">
+                <h2>Devoured Boigas!</h2>
+                <ul>
+                    {{#each burger}}
+                        {{#if devoured}}
+                        <li>
+                            <p>{{this.burger_name}}</p>
+                        </li>
+                        {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </di>
 </div>
