@@ -26,7 +26,7 @@ var orm = {
 
     updateOne: function(condition, cb){
         var queryString = 'UPDATE burgers SET devoured=true';
-        queryString += updateval + ' WHERE ' + condition;
+        queryString +=' WHERE ' + condition;
         console.log(queryString);
         connection.query(queryString, function(err, result){
             if (err) throw err;
