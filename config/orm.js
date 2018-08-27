@@ -16,8 +16,8 @@ var orm = {
 
     insertOne: function(insertVal, cb){
         var queryString = 'INSERT INTO burgers (burger_name) ';
-        queryString += 'VALUES (' + insertVal + ')';
-        console.log(queryString);
+        queryString += 'VALUES ("' + insertVal + '")';
+        console.log('queryString line 20: ' + queryString);
         connection.query(queryString, function(err, result){
             if (err) throw err;
             cb(result);
@@ -27,7 +27,6 @@ var orm = {
     updateOne: function(condition, cb){
         var queryString = 'UPDATE burgers SET devoured=true';
         queryString +=' WHERE ' + condition;
-        console.log(queryString);
         connection.query(queryString, function(err, result){
             if (err) throw err;
             cb(result);
