@@ -24,9 +24,9 @@ var orm = {
         });
     },
 
-    updateOne: function(updateVal, oldVal, cb){
-        var queryString = 'UPDATE burgers SET burger_name=';
-        queryString += updateval + ' WHERE burger_name=' +  oldVal;
+    updateOne: function(condition, cb){
+        var queryString = 'UPDATE burgers SET devoured=true';
+        queryString += updateval + ' WHERE ' + condition;
         console.log(queryString);
         connection.query(queryString, function(err, result){
             if (err) throw err;

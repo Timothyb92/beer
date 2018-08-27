@@ -1,0 +1,13 @@
+body {
+    position: relative;
+}
+
+#notDevoured {
+    position: absolute;
+    left: 20px;
+}
+
+#devoured {
+    position: absolute;
+    right: 20px;
+}
