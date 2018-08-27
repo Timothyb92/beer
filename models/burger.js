@@ -24,6 +24,6 @@ var burger = {
     }
 };
 
-burger.testQuery();
+// burger.testQuery();
 
 module.exports = burger;
