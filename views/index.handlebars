@@ -10,10 +10,7 @@
                 <ol>
                     {{#each burger}}
                         {{#unless devoured}}
-                            <li>
-                                <p>{{this.burger_name}}</p>
-                                <button data-id="{{this.id}}" class="eatBurger" data-devoured="{{this.devoured}}">Devour this</button>
-                            </li>
+                            {{> burgers/burgerBlock devoured=true}}
                         {{/unless}}
                     {{/each}}
                 </ol>
