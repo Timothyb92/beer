@@ -1,10 +1,18 @@
 {
   "name": "burger",
   "version": "1.0.0",
-  "description": "package.json file for eat-da-burger homework",
-  "main": "index.js",
+  "description": "This repo houses the directories and files for my answer for homework 14. The repo is named burger, and everything inside of the files including variable names and database tables relate to burgers, but the content on the front-end is beer themed because beer is awesome.",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.16.0"
+  },
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -21,11 +29,5 @@
   "bugs": {
     "url": "https://github.com/Timothyb92/burger/issues"
   },
-  "homepage": "https://github.com/Timothyb92/burger#readme",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.3",
-    "express-handlebars": "^3.0.0",
-    "mysql": "^2.16.0"
-  }
+  "homepage": "https://github.com/Timothyb92/burger#readme"
 }
