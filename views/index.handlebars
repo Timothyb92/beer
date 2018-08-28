@@ -1,40 +1,43 @@
-<div class="container d-flex justify-content-center">
-    <div class="flex-column">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Eat-Da-Burger!</h1>
+<div class="container">
+    <div class="row">
+        <div id='notDevoured' class="col-md-4 beerList">
+            <h2 class="text-center">Knock a couple soldiers back!</h2>
+            <ol>
+                {{#each burger}}
+                    {{#unless devoured}}
+                        {{> burgers/burgerBlock devoured=true}}
+                    {{/unless}}
+                {{/each}}
+            </ol>
+        </div>
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="assets/img/bottles.png" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <form class="addForm text-center">
+                        <div class="form-group">
+                            <input type="text" id="burgerInput" name="name">
+                        </div>
+                        <button class="btn" type="submit">Add a beer that you wanna chug!</button>
+                    </form>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div id='notDevoured' class="col-md-12">
-                <ol>
-                    {{#each burger}}
-                        {{#unless devoured}}
-                            {{> burgers/burgerBlock devoured=true}}
-                        {{/unless}}
-                    {{/each}}
-                </ol>
-                <form class="addForm">
-                    <div class="form-group">
-                        <input type="text" id="burgerInput" name="name">
-                    </div>
-                    <button type="submit">Add a boiga thatcha wanna EAT</button>
-                </form>
-            </div>
+        <div id='devoured' class="col-md-4 beerList">
+            <h2 class="text-center">The worst beer is an empty beer..</h2>
+            <ul class="text-center">
+                {{#each burger}}
+                    {{#if devoured}}
+                    <li>
+                        <p>{{this.burger_name}}</p>
+                    </li>
+                    {{/if}}
+                {{/each}}
+            </ul>
         </div>
-        <div class="row">
-            <div id='devoured' class="col-md-12">
-                <h2>Devoured Boigas!</h2>
-                <ul>
-                    {{#each burger}}
-                        {{#if devoured}}
-                        <li>
-                            <p>{{this.burger_name}}</p>
-                        </li>
-                        {{/if}}
-                    {{/each}}
-                </ul>
-            </div>
-        </div>
-    </di>
+    </div>
 </div>
